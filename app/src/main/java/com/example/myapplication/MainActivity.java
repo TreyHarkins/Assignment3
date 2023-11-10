@@ -19,16 +19,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    ArrayList<String> Names = new ArrayList<>();
-    ArrayList<Float> NatNums = new ArrayList<>();
-    ArrayList<String> Species = new ArrayList<>();
-    ArrayList<String> Genders = new ArrayList<>();
-    ArrayList<String> Heights = new ArrayList<>();
-    ArrayList<String> Weights = new ArrayList<>();
-    ArrayList<String> Levels = new ArrayList<>();
-    ArrayList<String> Hps = new ArrayList<>();
-    ArrayList<String> Attacks = new ArrayList<>();
-    ArrayList<String> Defenses = new ArrayList<>();
+    ArrayList<Integer> PosArray = new ArrayList<Integer>();
+    Integer pos = 0;
 
     View.OnClickListener resetListener = new View.OnClickListener() {
         @Override
@@ -72,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(isEmpty(editNatNum));
             if(isEmpty(editNatNum)){
                 text_national_Num.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set National Number", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_national_Num.setTextColor(Color.parseColor("#000000"));
@@ -84,32 +76,26 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         text_national_Num.setTextColor(Color.parseColor("#ff0000"));
-                        Toast.makeText(getApplicationContext(), "National number does not meet criteria", Toast.LENGTH_SHORT).show();
-                    }
-                    /*if (!NatNums.isEmpty()){
-                        for(int i = 0; i < NatNums.size()-1; i++){
-                            if(Float.compare(nationalNumber, NatNums.get(i)) != 0){
 
-                            }
-                        }
-                    }*/
+                    }
+
                 }
                 else{
                     text_national_Num.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "National Number is not a Number", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
 
             if(isEmpty(editNam)){
                 text_name.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Name", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_name.setTextColor(Color.parseColor("#000000"));
                 if(ifNumAppear(name)){
                     text_name.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "Name does not meet Criteria", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
                     text_name.setTextColor(Color.parseColor("#000000"));
@@ -119,13 +105,13 @@ public class MainActivity extends AppCompatActivity {
 
             if(isEmpty(editSpec)){
                 text_species.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Species", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_species.setTextColor(Color.parseColor("#000000"));
                 if(ifNumAppear(species)){
                     text_species.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "Species does not meet Criteria", Toast.LENGTH_SHORT).show();
+
                 }
                 else{
                     text_name.setTextColor(Color.parseColor("#000000"));
@@ -135,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(isEmpty(editHeight)){
                 text_height.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Height", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_height.setTextColor(Color.parseColor("#000000"));
@@ -147,18 +133,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         text_height.setTextColor(Color.parseColor("#ff0000"));
-                        Toast.makeText(getApplicationContext(), "Height does not meet criteria", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 else{
                     text_height.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "Height is not a Number", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
             if(isEmpty(editWeight)){
                 text_weight.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Weight", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_weight.setTextColor(Color.parseColor("#000000"));
@@ -170,18 +156,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         text_weight.setTextColor(Color.parseColor("#ff0000"));
-                        Toast.makeText(getApplicationContext(), "Weight does not meet criteria", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 else{
                     text_weight.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "Weight is not a Number", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
             if(isEmpty(editHP)){
                 text_hp.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set HP", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_hp.setTextColor(Color.parseColor("#000000"));
@@ -193,18 +179,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         text_hp.setTextColor(Color.parseColor("#ff0000"));
-                        Toast.makeText(getApplicationContext(), "HP does not meet Criteria", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 else{
                     text_hp.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "HP is not a Number", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
             if(isEmpty(editAttack)){
                 text_attack.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Attack", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_attack.setTextColor(Color.parseColor("#000000"));
@@ -216,18 +202,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else {
                         text_attack.setTextColor(Color.parseColor("#ff0000"));
-                        Toast.makeText(getApplicationContext(), "Defense does not meet criteria", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 else{
                     text_attack.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "Attack is not a Number", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
             if(isEmpty(editDefense)){
                 text_defense.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Defense", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_defense.setTextColor(Color.parseColor("#000000"));
@@ -239,18 +225,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         text_defense.setTextColor(Color.parseColor("#ff0000"));
-                        Toast.makeText(getApplicationContext(), "Defense does not meet criteria", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 else{
                     text_defense.setTextColor(Color.parseColor("#ff0000"));
-                    Toast.makeText(getApplicationContext(), "Defense is not a Number", Toast.LENGTH_SHORT).show();
+
                 }
             }
             String itemText = (String) spin_gender.getSelectedItem();
             if(itemText.equals("N/A")){
                 text_gender.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Gender", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_gender.setTextColor(Color.parseColor("#000000"));
@@ -259,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
             String itemText2 = (String) spin_lvl.getSelectedItem();
             if(itemText.equals("N/A")){
                 text_level.setTextColor(Color.parseColor("#ff0000"));
-                Toast.makeText(getApplicationContext(), "Set Level", Toast.LENGTH_SHORT).show();
+
             }
             else{
                 text_level.setTextColor(Color.parseColor("#000000"));
@@ -279,6 +265,8 @@ public class MainActivity extends AppCompatActivity {
                 mNewValues.put(PokeDatabase.COLUMN_POKEATTACK, editAttack.getText().toString().trim());
                 mNewValues.put(PokeDatabase.COLUMN_POKEDEFENSE, editDefense.getText().toString().trim());
 
+                PosArray.add(pos);
+                pos++;
                 /*String mSelectionClause = PokeDatabase.COLUMN_POKENAME + " = ? AND "
                         + PokeDatabase.COLUMN_POKENAME + " = ? AND "
                         + PokeDatabase.COLUMN_POKENATNUM + " = ? AND "
@@ -295,6 +283,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                 Toast.makeText(getApplicationContext(), "Your Pokemon is in the Database", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "Invalid Entry", Toast.LENGTH_LONG).show();
             }
         }
     };

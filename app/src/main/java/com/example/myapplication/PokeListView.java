@@ -127,4 +127,5 @@ public class PokeListView extends AppCompatActivity {
 
         }
     };*/
+
 }
